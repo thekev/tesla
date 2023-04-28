@@ -355,7 +355,7 @@ func stateError(sr *StateRequest) error {
 // A utility function to fetch the appropriate state of the vehicle
 func (c *Client) fetchState(resource string, id int64) (*StateRequest, error) {
 	stateRequest := &StateRequest{}
-	path := strings.Join([]string{c.baseURL, "vehicles", strconv.FormatInt(id, 10), "data_request", resource}, "/")
+	path := strings.Join([]string{c.baseURL, "vehicles", strconv.FormatInt(id, 10), "vehicle_data", resource}, "/")
 	if err := c.getJSON(path, stateRequest); err != nil {
 		return nil, err
 	}
